@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <style media="screen">
+    body {
+      background: url('https://wallpaperaccess.com/full/6825.jpg' ) no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .jumbotron {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem 1rem;
+      border-radius: 10px;
+      margin-top: 50px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+      color: #ffc107;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+    }
+
+    .btn-primary {
+      background-color: #ffc107;
+      border: none;
+      color: black;
+    }
+
+    .btn-primary:hover {
+      background-color: #e0a800;
+    }
+
+    .content-icons i {
+      font-size: 3rem;
+      color: #ffc107;
+      margin: 15px;
+    }
+
+    .navbar, .footer {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 1rem;
+    }
+  </style>
+
+  <title>About Us</title>
+</head>
+
+<body>
+
+  {% include "quiz/navbar.html" %}
+  <div class="container">
+    <center>
+      <h3 class='alert alert-success' style="margin-bottom:0px; background-color: #ffc107; color: black;">About Us!</h3>
+    </center>
+    <div class="jumbotron">
+      <h1>Welcome to Our Platform</h1>
+      <p class="lead">We Provide Platform For Students To Practice Questions.<br> Teachers can add courses/exams to the system and questions to those courses.</p>
+      <hr class="my-4">
+      <p>Explore our Website and enhance your learning experience.</p>
+      <div class="content-icons">
+        <i class="fas fa-book"></i>
+        <i class="fas fa-chalkboard-teacher"></i>
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/" role="button">HOME</a>
+      </p>
+    </div>
+  </div>
+  {% include "quiz/footer.html" %}
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

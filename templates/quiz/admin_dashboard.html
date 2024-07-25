@@ -1,0 +1,180 @@
+{% extends 'quiz/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: url('https://www.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-1-full.jpg') no-repeat center center fixed;
+        background-size: cover;
+        font-family: 'Arial', sans-serif;
+        color: #fff;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+        z-index: -1;
+      }
+
+      .container {
+        padding: 30px;
+        margin-top: 60px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 15px;
+      }
+
+      .card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      }
+
+      .card-header {
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        color: #fff;
+        font-size: 1.25rem;
+        text-align: center;
+        border-bottom: 0;
+        border-radius: 15px 15px 0 0;
+        padding: 15px;
+      }
+
+      .card-body {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .card-body h2 {
+        font-size: 2.5rem;
+        margin: 0;
+        color: #fff;
+      }
+
+      .card-body a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+        transition: color 0.3s ease;
+      }
+
+      .card-body a:hover {
+        color: #ddd;
+      }
+
+      .icon {
+        font-size: 3rem;
+        margin-right: 0.5rem;
+      }
+
+      .bg-c-blue {
+        background: #007bff;
+      }
+
+      .bg-c-green {
+        background: #28a745;
+      }
+
+      .bg-c-yellow {
+        background: #ffc107;
+      }
+
+      .bg-c-pink {
+        background: #dc3545;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 15px;
+        }
+
+        .card-body h2 {
+          font-size: 2rem;
+        }
+
+        .icon {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+</head>
+
+<div class="overlay"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-xl-3">
+      <div class="card bg-c-blue">
+        <div class="card-header">
+          Total Students
+        </div>
+        <div class="card-body">
+          <h2><i class="fas fa-user-graduate icon"></i>{{ total_student }}</h2>
+          <a href="admin-view-student">View Students</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-xl-3">
+      <div class="card bg-c-green">
+        <div class="card-header">
+          Total Teachers
+        </div>
+        <div class="card-body">
+          <h2><i class="fas fa-chalkboard-teacher icon"></i>{{ total_teacher }}</h2>
+          <a href="admin-view-teacher">View Teachers</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-xl-3">
+      <div class="card bg-c-yellow">
+        <div class="card-header">
+          Total Courses
+        </div>
+        <div class="card-body">
+          <h2><i class="fas fa-book icon"></i>{{ total_course }}</h2>
+          <a href="admin-view-course">View Courses</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-xl-3">
+      <div class="card bg-c-pink">
+        <div class="card-header">
+          Total Questions
+        </div>
+        <div class="card-body">
+          <h2><i class="fas fa-question-circle icon"></i>{{ total_question }}</h2>
+          <a href="admin-view-question">View Questions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+{% endblock content %}

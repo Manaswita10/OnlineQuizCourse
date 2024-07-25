@@ -1,0 +1,109 @@
+{% extends 'quiz/adminbase.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+  <!-- Load Bootstrap 3 CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    body {
+      background: url('https://t4.ftcdn.net/jpg/04/39/13/37/360_F_439133763_FrLdhZsd5aGC23r9ATARuKJBr8ifZjIe.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+      margin-top: 50px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .panel-heading {
+      background-color: #0056b3;
+      color: #fff;
+      border-radius: 10px 10px 0 0;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .panel-title {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    table {
+      margin-top: 20px;
+    }
+
+    th, td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    td {
+      background-color: #f9f9f9;
+    }
+
+    .btn-danger {
+      color: #fff;
+      background-color: #dc3545;
+      border-color: #dc3545;
+      border-radius: 5px;
+    }
+
+    .btn-danger:hover {
+      color: #fff;
+      background-color: #c82333;
+      border-color: #bd2130;
+    }
+
+    .btn-xs {
+      padding: 3px 6px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<br><br>
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h6 class="panel-title">Exams</h6>
+    </div>
+    <table class="table table-hover" id="dev-table">
+      <thead>
+        <tr>
+          <th>Exam Name</th>
+          <th>View Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for t in courses %}
+        <tr>
+          <td>{{ t.course_name }}</td>
+          <td>
+            <a class="btn btn-danger btn-xs" href="{% url 'admin-check-marks' t.id %}">
+              <span class="glyphicon glyphicon-eye-open"></span>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<br><br><br><br><br><br>
+{% endblock content %}
